@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # install webmin
-echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
-wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
-apt-get update
-apt-get -y install webmin
+if [ ! -f /var/lib/dpkg/info/webmin.conffiles ]; then
+    	echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
+	wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
+	apt-get update
+	apt-get -y install webmin
+fi
 
 
 # Secure OpenVPN server installer for Debian, Ubuntu, CentOS and Arch Linux
