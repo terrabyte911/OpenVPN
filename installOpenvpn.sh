@@ -3,7 +3,7 @@
 # Secure OpenVPN server installer for Debian, Ubuntu, CentOS and Arch Linux
 # https://github.com/Angristan/OpenVPN-install
 
-OPENVPNPORT1=`cat /etc/seedbox-from-scratch/openvpn.info`
+OPENVPNPORT1=31195
 
 if [[ "$EUID" -ne 0 ]]; then
 	echo "Sorry, you need to run this as root"
