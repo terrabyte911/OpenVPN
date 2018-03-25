@@ -717,7 +717,7 @@ verb 3" >> /etc/openvpn/client-template.txt
 	echo "Client $CLIENT added, available at $homeDir/$CLIENT.ovpn"
 	#sudo chown --reference=restartSeedbox *.ovpn
 	
-	zip $CLIENT.zip $homeDir/$CLIENT.ovpn
+	#zip $CLIENT.zip $homeDir/$CLIENT.ovpn
 	#sudo mv $CLIENT.zip /var/www/rutorrent
 	#chown www-data:www-data /var/www/rutorrent/$CLIENT.zip
 	#echo $CLIENT > /etc/seedbox-from-scratch/vpnclient.info
