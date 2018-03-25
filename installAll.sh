@@ -8,6 +8,9 @@ if [ ! -f /var/lib/dpkg/info/webmin.conffiles ]; then
 	wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
 	apt-get update
 	apt-get -y install webmin
+else
+	echo "Webmin already installed - skipping."
+	echo ""
 fi
 
 
