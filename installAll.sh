@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# install webmin
+# install webmin and change ssh port
 if [ ! -f /var/lib/dpkg/info/webmin.conffiles ]; then
+	perl -pi -e "s/Port 22/Port 22222/g" /etc/ssh/sshd_config
+	service ssh restart
     	echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 	wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
 	apt-get update
